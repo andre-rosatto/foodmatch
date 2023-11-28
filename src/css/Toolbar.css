@@ -1,0 +1,30 @@
+#Toolbar {
+	width: 100vw;
+	height: 64px;
+	background-color: rgba(0, 0, 0, .75);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+#Toolbar .button {
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+	background-position: 100% center;
+	background-repeat: no-repeat;
+}
+
+#sound-switch {
+	background-image: url('../../public/assets/images/sound.png');
+	background-size: 200% 100%;
+}
+
+#sound-switch.enabled {
+	background-position: left center;
+}
+
+#restart-button {
+	background: url('../../public/assets/images/restart.png') no-repeat;
+}

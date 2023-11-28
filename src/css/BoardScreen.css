@@ -1,0 +1,9 @@
+#BoardScreen {
+	width: 100%;
+	height: 100%;
+	background: radial-gradient(rgb(64, 146, 128), rgb(23, 77, 65));
+	display: flex;
+	align-items: center;
+	gap: 25px;
+	flex-direction: column;
+}

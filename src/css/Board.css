@@ -1,0 +1,8 @@
+#Board {
+	background-color: #1e150c;
+	box-sizing: content-box;
+	border: 1px solid white;
+	box-shadow: 0 0 10px black;
+	display: grid;
+	border-radius: 5px;
+}
