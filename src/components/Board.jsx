@@ -11,25 +11,14 @@ export default function Board({ cols, rows, playAudio }) {
 
 	useEffect(() => {
 		makeGame();
-	}, [cols, rows]);
+		//eslint-disable-next-line
+	}, []);
 
 	const boardStyle = {
 		width: `${cols * 64}px`,
 		height: `${rows * 65}px`,
 		gridTemplateColumns: `repeat(${cols}, auto)`,
 	};
-
-	const idxToGridPos = (idx) => {
-		return {
-			col: idx % cols,
-			row: Math.floor(idx / cols)
-		};
-	};
-
-	const isEdge = (idx) => {
-		const gridPos = idxToGridPos(idx);
-		return gridPos.col === 0 || gridPos.row === 0 || gridPos.col === cols - 1 || gridPos.row === rows - 1;
-	}
 
 	const makeGame = () => {
 		const newTiles = Array(rows * cols).fill().map(() => {
@@ -70,6 +59,18 @@ export default function Board({ cols, rows, playAudio }) {
 		setTiles(newTiles);
 		setSelectedIdx(-1);
 	};
+
+	const idxToGridPos = (idx) => {
+		return {
+			col: idx % cols,
+			row: Math.floor(idx / cols)
+		};
+	};
+
+	const isEdge = (idx) => {
+		const gridPos = idxToGridPos(idx);
+		return gridPos.col === 0 || gridPos.row === 0 || gridPos.col === cols - 1 || gridPos.row === rows - 1;
+	}
 
 	const getNeighbourIndices = (idx) => {
 		const result = [];
