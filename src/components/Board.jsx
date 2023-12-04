@@ -4,8 +4,10 @@ import Tile from "./Tile";
 
 import '../css/Board.css';
 
+const TILE_COUNT = 16;
+const TILE_SIZE = 64;
+
 export default function Board({ cols, rows, playAudio }) {
-	const TILE_COUNT = 16;
 	const [tiles, setTiles] = useState([]);
 	const [selectedIdx, setSelectedIdx] = useState(-1);
 
@@ -15,8 +17,8 @@ export default function Board({ cols, rows, playAudio }) {
 	}, []);
 
 	const boardStyle = {
-		width: `${cols * 64}px`,
-		height: `${rows * 65}px`,
+		width: `${cols * TILE_SIZE}px`,
+		height: `${rows * (TILE_SIZE + 1)}px`,
 		gridTemplateColumns: `repeat(${cols}, auto)`,
 	};
 
@@ -57,7 +59,6 @@ export default function Board({ cols, rows, playAudio }) {
 			};
 		} while (true);
 		setTiles(newTiles);
-		setSelectedIdx(-1);
 	};
 
 	const idxToGridPos = (idx) => {
